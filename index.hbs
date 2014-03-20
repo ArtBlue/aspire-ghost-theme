@@ -1,0 +1,62 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<div class="container">
+    {{> header}}
+    <main class="content" role="main">
+        <div id="post-listings" class="clearfix">
+        {{! Each post will be output using this markup }}
+        {{#foreach posts}}
+            {{! The latest post is fancy-fied}}
+            {{#if @first}}
+                <article class="{{post_class}} jumbotron site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+                    <div class="article-inner {{#if @blog.cover}}bg-image{{/if}}">
+                        <header class="post-header">
+                            <span class="post-meta">
+                                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM D, YYYY"}}</time>
+                            </span> by
+                            <span class="post-author">{{author.name}}</span>
+                            <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+                        </header>
+                        <section class="post-excerpt">
+                            <p>{{excerpt}}&hellip;</p>
+                        </section>
+                        <p>
+                            <a class="btn btn-lg btn-warning" href="{{url}}" role="button">Continue Reading...</a>
+                        </p>
+                    </div>
+                </article>
+            {{! The rest of the posts are regular listings }}
+            {{else}}
+                <article class="{{post_class}} post-exerpt">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail reg-post-thumb">
+                            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                            <p>{{excerpt words="40"}}&hellip;</p>
+                            <div class="post-meta-wrapper">
+                                <div class="date">
+                                    <div class="month">{{date format="MMM"}}
+                                        <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="D, YYYY"}}</time>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-block-meta clearfix">
+                                <div class="btn-wrapper">
+                                    <a href="{{url}}" class="btn btn-sm btn-warning" role="button">Read More</a>
+                                </div>
+                                <div class="post-tags">
+                                    {{tags separator=" , " prefix="Tags: "}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {{/if}}
+        {{/foreach}}
+        </div>
+        {{!! After all the posts, we have the previous/next pagination links }}
+        {{pagination}}
+    </main>
+</div>

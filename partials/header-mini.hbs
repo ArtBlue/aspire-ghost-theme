@@ -1,0 +1,16 @@
+<header class="header container-fluid clearfix">
+    <div class="row">
+        <div class="header-subheader col-xs-12 col-sm-7 col-md-9">
+            <a class="blog-logo h1" href="{{@blog.url}}">
+                {{#if @blog.logo}}
+                    <img src="{{@blog.logo}}" alt="Blog Logo" />
+                {{else}}
+                    <span class="blog-title">{{@blog.title}}</span>
+                {{/if}}
+            </a>
+            <div class="h2">{{@blog.description}}</div>
+        </div>
+        <div class="social-media-profiles col-xs-12 col-sm-5 col-md-3">
+            {{> social-profiles}}
+        </div>
+</header>
