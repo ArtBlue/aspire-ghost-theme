@@ -2,7 +2,7 @@ Aspire Ghost Theme
 ==================
 ##Introduction
 
-**Aspire Theme** is a clean, lightweight, responsive theme for Ghost (http://www.ghost.org), the emerging Node.js blogging platform. This theme was developed consistent with the principles with which the Ghost platform was built - simplicity and intuitiveness. This theme was developed for Ghost v0.4, and although some assumptions may be made about the future development of Ghost being backwards compatible, no guarantees can be made that this theme will continue to work with future Ghost versions. Aspire Ghost Theme was modeled after Casper, the default Ghost theme, and was built using Bootstrap v3.1.1 (http://getbootstrap.com). Some assets and elements were retained from Casper, to make some of the look and feel consistent with the platform defaults.
+**Aspire Theme** is a clean, lightweight, responsive theme for Ghost (http://www.ghost.org), the emerging Node.js blogging platform. This theme was developed consistent with the principles with which the Ghost platform was built - simplicity and intuitiveness. This theme was developed for Ghost v0.4, and although some assumptions may be made about the future development of Ghost being backwards compatible, no guarantees can be made that this theme will continue to work with future Ghost versions. Aspire Ghost Theme was modeled after Casper, the default Ghost theme, and was built using Bootstrap v3.1.1 (http://getbootstrap.com), taking full advantage of the Express 3 handlebars template engine. Some assets and elements were retained from Casper, to make some of the look and feel consistent with the platform defaults.
 
 ##Elements
 
